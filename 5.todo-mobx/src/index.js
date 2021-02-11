@@ -2,14 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
 import {Provider, provider} from 'mobx-react';
+import todoStore from './stores/TodoStore';
 
 ReactDOM.render(
- <Provider todoStore = {}>
+ <Provider todoStore = {todoStore}>
    <App />
- </Provider>
- 
+ </Provider>,
   document.getElementById('root')
 );
 

@@ -1,14 +1,25 @@
-import {observable, action, computed} from 'mobx';
+import {observable, action, computed, makeObservable} from 'mobx';
 
 class TodoStore {  
+
+  constructor(){
+    makeObservable(this);
+  }
   
-  @abservable
-  _todo = {} //id, title, date
+  @observable
+  _todo = { } //id, title, date
 
   get todo() {
     return this._todo;
   }
 
+  @action 
+  setTodoProps(name, value){
+    this._todo = {
+      ...this.todo,
+      [name] : value
+    }
+  }
 }
 
 export default new TodoStore();
