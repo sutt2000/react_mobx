@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.1.7"
   }
 }

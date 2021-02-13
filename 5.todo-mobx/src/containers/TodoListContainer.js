@@ -10,8 +10,13 @@ class TodoListContainer extends Component {
   onSelectedTodo(todo){
     this.props.todoStore.selectedTodo(todo)
   }
-  render() {
-    const { todos } = this.props.todoStore;
+  render() {   
+    let { todos, searchText } = this.props.todoStore;
+    
+
+    todos = todos.filter((todo) => todo.title
+            .toLowerCase()
+            .indexOf(searchText.toLowerCase()) !== -1); 
     return <TodoListView 
             todos={todos} 
             onSelectedTodo={this.onSelectedTodo} 
